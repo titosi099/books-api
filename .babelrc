@@ -1,0 +1,4 @@
+//Arquivo de configuração do babel que deve ficar na raiz do projeto
+{
+	"presets": ["es2015"]
+}

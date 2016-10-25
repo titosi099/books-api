@@ -4,40 +4,40 @@ export default (sequelize, DataType) => {
   const Users = sequelize.define('Users', {
     id: {
       type: DataType.INTEGER,
-      primaryKkey: true,
-      autoIncrement: true
+      primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataType.STRING,
       allowNull: false,
       validate: {
-        notEmpty: true
-      }
+        notEmpty: true,
+      },
     },
     email: {
       type: DataType.STRING,
       allowNull: true,
       validate: {
-        notEmpty: true
-      }
+        notEmpty: true,
+      },
     },
     password: {
       type: DataType.STRING,
       allowNull: true,
       validate: {
-        notEmpty: true
-      }
-    }
+        notEmpty: true,
+      },
+    },
   },
   { hooks: {
     beforeCreate: (user) => {
       const salt = bcrypt.genSaltSync();
       user.set('password', bcrypt.hashSync(user.password, salt));
-    }
+    },
   },
   calssMethods: {
-    isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword)
-  }
+    isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword),
+  },
 });
   return Users;
-}
+};

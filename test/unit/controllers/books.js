@@ -10,6 +10,7 @@ describe('Controllers: Books', () => {
       const expectedResponse = [{
         id: 1,
         name: 'Test Book',
+        description: 'Default description',
         created_at: '2016-08-06T23:55:36.69ZZ',
         updated_at: '2016-08-06T23:55:36.69ZZ',
       }];
@@ -31,6 +32,7 @@ describe('Controllers: Books', () => {
       const expectedResponse = [{
         id: 1,
         name: 'Test Book',
+        description: 'Default description',
         created_at: '2016-08-06T23:55:36.69ZZ',
         updated_at: '2016-08-06T23:55:36.69ZZ',
       }];
@@ -50,10 +52,12 @@ describe('Controllers: Books', () => {
       };
       const requestBody = {
         name: 'New Book',
+        description: 'Default description',
       };
       const expectedResponse = [{
         id: 1,
         name: 'Test Book',
+        description: 'Default description',
         created_at: '2016-08-06T23:55:36.69ZZ',
         updated_at: '2016-08-06T23:55:36.69ZZ',
       }];
@@ -81,6 +85,7 @@ describe('Controllers: Books', () => {
       const expectedResponse = [{
         id: 1,
         name: 'Test Book',
+        description: 'Default description',
         created_at: '2016-08-06T23:55:36.69ZZ',
         updated_at: '2016-08-06T23:55:36.69ZZ',
       }];

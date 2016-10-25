@@ -22,6 +22,7 @@ describe('Routes Books', () => {
       .end((err, res) => {
         expect(res.body[0].id).to.be.eql(defaultBook.id);
         expect(res.body[0].name).to.be.eql(defaultBook.name);
+        expect(res.body[0].description).to.be.eql(defaultBook.description);
         done(err);
       });
     });
@@ -34,6 +35,7 @@ describe('Routes Books', () => {
       .end((err, res) => {
         expect(res.body.id).to.be.eql(defaultBook.id);
         expect(res.body.name).to.be.eql(defaultBook.name);
+        expect(res.body.description).to.be.eql(defaultBook.description);
         done(err);
       });
     });
@@ -47,6 +49,7 @@ describe('Routes Books', () => {
       .send(newBook)
       .end((err, res) => {
         expect(res.body.name).to.be.eql(newBook.name);
+        expect(res.body.description).to.be.eql(newBook.description);
         done(err);
       });
     });

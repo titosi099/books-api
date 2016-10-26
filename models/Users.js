@@ -35,7 +35,7 @@ export default (sequelize, DataType) => {
       user.set('password', bcrypt.hashSync(user.password, salt));
     },
   },
-  calssMethods: {
+  classMethods: {
     isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword),
   },
 });
